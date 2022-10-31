@@ -7,16 +7,16 @@ namespace RamosGuillenTrujilloProyectoPorgreso1.Models
         public int Id { get; set; }
 
         [Required(ErrorMessage = "Ingresa el tipo")]
-        public int Tipo { get; set; }
+        public int? Tipo { get; set; }
 
         [Required(ErrorMessage = "Ingresa el modelo")]
-        public string Modelo { get; set; }
+        public string? Modelo { get; set; }
 
         [Required(ErrorMessage = "Ingresa la mátricula")]
-        public string Matricula { get; set; }
+        public string? Matricula { get; set; }
 
         [Required(ErrorMessage = "Ingresa la capacidad")]
         [Range(10, 50, ErrorMessage = "Error. Ingrese un valor dentro los parámetros establecidos")]
-        public int Capacidad { get; set; }
+        public int? Capacidad { get; set; }
     }
 }
