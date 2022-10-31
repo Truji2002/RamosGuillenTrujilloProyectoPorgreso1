@@ -6,7 +6,7 @@ namespace RamosGuillenTrujilloProyectoPorgreso1.Models
 
     {
         
-        public int IdCliente { get; set; }
+        public int IdConductor { get; set; }
 
         [Required(ErrorMessage = "Ingresa la cédula")]
         [ValidarCedula]
