@@ -14,7 +14,8 @@ namespace RamosGuillenTrujilloProyectoPorgreso1.Models
         
         [Required]
         public string Matricula { get; set; }
-        
+
+        [Required]
         [Range(10, 60, ErrorMessage = "Error. Ingrese un valor dentro los parámetros establecidos")]
         public int Capacidad { get; set; }
 
