@@ -32,17 +32,17 @@ namespace RamosGuillenTrujilloProyectoPorgreso1.Models
 
         [Required(ErrorMessage = "Ingresa la fecha de nacimiento")]
         [DataType(DataType.Date, ErrorMessage ="Ingrese una fecha valida")]
-        public DateOnly FechaNacimiento { get; set; }
+        public DateTime FechaNacimiento { get; set; }
 
 
         [Required(ErrorMessage = "Ingresa la fecha de emision de la licencia")]
         [DataType(DataType.Date, ErrorMessage = "Ingrese una fecha valida")]
-        public DateOnly FechaEmisionLicencia { get; set; }
+        public DateTime FechaEmisionLicencia { get; set; }
 
 
         [Required(ErrorMessage = "Ingresa la fecha de vencimiento de la licencia")]
         [DataType(DataType.Date, ErrorMessage = "Ingrese una fecha valida")]
-        public DateOnly FechaVencimientoLicencia { get; set; }
+        public DateTime FechaVencimientoLicencia { get; set; }
 
         [Required(ErrorMessage = "Ingresa la contraseña")]
         [DataType(DataType.Password, ErrorMessage ="Ingrese una contraseña valida")]
