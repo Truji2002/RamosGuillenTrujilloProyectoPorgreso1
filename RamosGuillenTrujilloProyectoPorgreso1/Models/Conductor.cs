@@ -5,7 +5,7 @@ namespace RamosGuillenTrujilloProyectoPorgreso1.Models
     public class Conductor
 
     {
-
+        [Key]
         public int IdConductor { get; set; }
 
         [Display(Name = "Nombre")]
