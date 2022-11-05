@@ -9,12 +9,12 @@ namespace RamosGuillenTrujilloProyectoPorgreso1.Models
         [Display(Name = "Punto de partida")]
         [Required(ErrorMessage = "Debe ingresar el punto de partida")]
         [RegularExpression("^[a-zA-Z]*${1,100}", ErrorMessage = "Solo puede ingresar letras")]
-        public string PuntoPartida { get; set; }
+        public string? PuntoPartida { get; set; }
 
         [Display(Name = "Punto de llegada")]
         [Required(ErrorMessage = "Debe ingresar el punto de llegada")]
         [RegularExpression("^[a-zA-Z]*${1,100}", ErrorMessage = "Solo puede ingresar letras")]
-        public string PuntoLlegada { get; set; }
+        public string? PuntoLlegada { get; set; }
 
         [Display(Name = "Precio del viaje")]
         [Required(ErrorMessage = "Debe ingresar el precio del viaje")]
