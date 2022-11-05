@@ -1,9 +1,11 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using RamosGuillenTrujilloProyectoPorgreso1.Models;
 using System.Diagnostics;
+using Microsoft.AspNetCore.Authorization;
 
 namespace RamosGuillenTrujilloProyectoPorgreso1.Controllers
 {
+   //[Authorize]
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
@@ -14,6 +16,24 @@ namespace RamosGuillenTrujilloProyectoPorgreso1.Controllers
         }
 
         public IActionResult Index()
+        {
+            return View();
+        }
+
+        [Authorize(Roles = "Conductor")]
+        public IActionResult Ventas()
+        {
+            return View();
+        }
+
+        [Authorize(Roles = "Conductor")]
+        public IActionResult Compras()
+        {
+            return View();
+        }
+
+        [Authorize(Roles = "Conductor, Usuario")]
+        public IActionResult Clientes()
         {
             return View();
         }
