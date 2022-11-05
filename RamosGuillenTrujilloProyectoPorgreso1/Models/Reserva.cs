@@ -7,7 +7,7 @@ namespace RamosGuillenTrujilloProyectoPorgreso1.Models
         
        
     {
-        
+       /* 
         public int IdReserva { get; set; }
 
         
@@ -16,6 +16,6 @@ namespace RamosGuillenTrujilloProyectoPorgreso1.Models
 
 
 
-
+        */
     }
 }
