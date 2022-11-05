@@ -40,5 +40,11 @@ namespace RamosGuillenTrujilloProyectoPorgreso1.Models
         [DataType(DataType.DateTime, ErrorMessage = "Ingrese una fecha valida")]
         public DateTime FechaNacimiento { get; set; }
 
+
+        [Required(ErrorMessage = "Ingresa la contraseña")]
+        [DataType(DataType.Password, ErrorMessage = "Ingrese una contraseña valida")]
+        public string? Contraseña { get; set; }
+
+
     }
 }
