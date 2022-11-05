@@ -28,7 +28,7 @@ namespace RamosGuillenTrujilloProyectoPorgreso1.Models
 
         [Display(Name = "Celular")]
         [Required(ErrorMessage = "Ingrese su celular")]
-        [RegularExpression("^[0-9]*$", ErrorMessage = "Solo puede ingresar numeros")]
+        [RegularExpression("[0]-^[0-9]*$", ErrorMessage = "Solo puede ingresar numeros")]
         [StringLength(10, MinimumLength = 10, ErrorMessage = "Su celular debe tener 10 números")]
         public string? NumeroTelefono { get; set; }
 
