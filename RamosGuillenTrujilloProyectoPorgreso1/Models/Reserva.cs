@@ -7,13 +7,15 @@ namespace RamosGuillenTrujilloProyectoPorgreso1.Models
         
        
     {
-        
+       /* 
         public int IdReserva { get; set; }
 
-        //[ForeignKey] 
-        
-        
         
 
+        //[ForeignKey] 
+
+
+
+        */
     }
 }
