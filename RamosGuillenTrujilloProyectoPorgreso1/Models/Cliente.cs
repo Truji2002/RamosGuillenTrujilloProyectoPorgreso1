@@ -5,6 +5,7 @@ namespace RamosGuillenTrujilloProyectoPorgreso1.Models
     public class Cliente
 
     {
+
         public int IdCliente { get; set; }
         [Required(ErrorMessage = "Debe ingresar un nombre")]
         public string NombreCompleto { get; set; }
