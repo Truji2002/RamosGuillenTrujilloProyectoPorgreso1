@@ -35,6 +35,21 @@ namespace RamosGuillenTrujilloProyectoPorgreso1.Models
         public DateOnly FechaNacimiento { get; set; }
 
 
+        [Required(ErrorMessage = "Ingresa la fecha de emision de la licencia")]
+        [DataType(DataType.Date, ErrorMessage = "Ingrese una fecha valida")]
+        public DateOnly FechaEmisionLicencia { get; set; }
+
+
+        [Required(ErrorMessage = "Ingresa la fecha de vencimiento de la licencia")]
+        [DataType(DataType.Date, ErrorMessage = "Ingrese una fecha valida")]
+        public DateOnly FechaVencimientoLicencia { get; set; }
+
+        [Required(ErrorMessage = "Ingresa la contraseña")]
+        [DataType(DataType.Password, ErrorMessage ="Ingrese una contraseña valida")]
+        public string? Contraseña { get; set; }
+
+
+
         public class ValidarCedula : ValidationAttribute
         {
 
