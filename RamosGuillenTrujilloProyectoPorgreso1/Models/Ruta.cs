@@ -4,6 +4,7 @@ namespace RamosGuillenTrujilloProyectoPorgreso1.Models
 {
     public class Ruta
     {
+        [Key]
         public int IdRuta { get; set; }
 
         [Display(Name = "Punto de partida")]
