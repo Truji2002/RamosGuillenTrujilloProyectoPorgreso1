@@ -75,10 +75,7 @@ namespace RamosGuillenTrujilloProyectoPorgreso1.Models
                     if (provincia > 0 && provincia < 25)
                     {
                         estado = Verificar(valced);
-
-
                     }
-
 
                 }
                 return estado;
