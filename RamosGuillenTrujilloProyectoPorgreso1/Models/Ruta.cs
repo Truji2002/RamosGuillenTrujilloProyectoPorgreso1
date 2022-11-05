@@ -20,7 +20,7 @@ namespace RamosGuillenTrujilloProyectoPorgreso1.Models
 
         [Required(ErrorMessage = "Ingresa la fecha de partida")]
         [DataType(DataType.Date, ErrorMessage = "Ingrese una fecha valida")]
-        public DateOnly FechaPartida { get; set; }
+        public DateTime FechaPartida { get; set; }
 
         //public DateTime HoraAproximadaLlegada { get; set; }
 
