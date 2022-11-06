@@ -1,9 +1,14 @@
-﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using RamosGuillenTrujilloProyectoPorgreso1.Data;
+using Microsoft.AspNetCore.Identity;
+using RamosGuillenTrujilloProyectoPorgreso1.Areas.Identity.Data;
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddDbContext<RamosGuillenTrujilloProyectoPorgreso1Context>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("RamosGuillenTrujilloProyectoPorgreso1Context") ?? throw new InvalidOperationException("Connection string 'RamosGuillenTrujilloProyectoPorgreso1Context' not found.")));
+
+builder.Services.AddDefaultIdentity<ApplicationUser>(options => options.SignIn.RequireConfirmedAccount = true)
+    .AddEntityFrameworkStores<ApplicationDbContext>();
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
@@ -22,6 +27,7 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
+app.UseAuthentication();;
 
 app.UseAuthorization();
 
@@ -30,3 +36,4 @@ app.MapControllerRoute(
     pattern: "{controller=Home}/{action=Index}/{id?}");
 
 app.Run();
+
