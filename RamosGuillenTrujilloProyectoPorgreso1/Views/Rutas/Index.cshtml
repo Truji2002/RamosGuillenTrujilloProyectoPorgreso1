@@ -1,11 +1,17 @@
 ﻿@model IEnumerable<RamosGuillenTrujilloProyectoPorgreso1.Models.Ruta>
 
 @{
-    ViewData["Title"] = "Index";
+    Layout = null;
 }
 
-<h1>Index</h1>
+<!DOCTYPE html>
 
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
 <p>
     <a asp-action="Create">Create New</a>
 </p>
@@ -23,18 +29,6 @@
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Precio)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Tipo)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Modelo)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Matricula)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Capacidad)
             </th>
             <th></th>
         </tr>
@@ -55,18 +49,6 @@
                 @Html.DisplayFor(modelItem => item.Precio)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Tipo)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Modelo)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Matricula)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Capacidad)
-            </td>
-            <td>
                 <a asp-action="Edit" asp-route-id="@item.IdRuta">Edit</a> |
                 <a asp-action="Details" asp-route-id="@item.IdRuta">Details</a> |
                 <a asp-action="Delete" asp-route-id="@item.IdRuta">Delete</a>
@@ -75,3 +57,5 @@
 }
     </tbody>
 </table>
+</body>
+</html>

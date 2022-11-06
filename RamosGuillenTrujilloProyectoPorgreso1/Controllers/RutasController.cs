@@ -54,7 +54,7 @@ namespace RamosGuillenTrujilloProyectoPorgreso1.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("IdRuta,FechaEmisionLicencia,FechaVencimientoLicencia,PuntoLlegada,Precio,Tipo,Modelo,Matricula,Capacidad")] Ruta ruta)
+        public async Task<IActionResult> Create([Bind("IdRuta,FechaEmisionLicencia,FechaVencimientoLicencia,PuntoLlegada,Precio")] Ruta ruta)
         {
             if (ModelState.IsValid)
             {
@@ -86,7 +86,7 @@ namespace RamosGuillenTrujilloProyectoPorgreso1.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("IdRuta,FechaEmisionLicencia,FechaVencimientoLicencia,PuntoLlegada,Precio,Tipo,Modelo,Matricula,Capacidad")] Ruta ruta)
+        public async Task<IActionResult> Edit(int id, [Bind("IdRuta,FechaEmisionLicencia,FechaVencimientoLicencia,PuntoLlegada,Precio")] Ruta ruta)
         {
             if (id != ruta.IdRuta)
             {
