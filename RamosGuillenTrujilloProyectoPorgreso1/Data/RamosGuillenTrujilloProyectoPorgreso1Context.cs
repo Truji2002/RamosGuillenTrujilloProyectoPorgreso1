@@ -15,5 +15,7 @@ namespace RamosGuillenTrujilloProyectoPorgreso1.Data
         }
 
         public DbSet<RamosGuillenTrujilloProyectoPorgreso1.Models.Conductor> Conductor { get; set; } = default!;
+
+        public DbSet<RamosGuillenTrujilloProyectoPorgreso1.Models.Usuario> Usuario { get; set; }
     }
 }

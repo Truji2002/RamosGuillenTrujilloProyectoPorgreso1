@@ -5,6 +5,7 @@ namespace RamosGuillenTrujilloProyectoPorgreso1.Models
     public class Conductor
 
     {
+        /*
         [Key]
         public int IdConductor { get; set; }
 
@@ -57,9 +58,9 @@ namespace RamosGuillenTrujilloProyectoPorgreso1.Models
         [Required(ErrorMessage = "Ingresa la contraseña")]
         [DataType(DataType.Password, ErrorMessage = "Ingrese una contraseña valida")]
         public string? Contraseña { get; set; }
-
+        */
     }
-        public class ValidarCedula : ValidationAttribute
+        /*public class ValidarCedula : ValidationAttribute
         {
             public override bool IsValid(object? value)
 
@@ -110,7 +111,7 @@ namespace RamosGuillenTrujilloProyectoPorgreso1.Models
                 return false;
         }
 
-        }
+        }*/
 
         
 }

@@ -1,12 +1,12 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.Xml.Linq;
 
 namespace RamosGuillenTrujilloProyectoPorgreso1.Models
 {
-    public class Cliente
+    public class Usuario
 
     {
-        
-        /*[Key]
+        [Key]
         public int IdCliente { get; set; }
 
         [Display(Name = "Nombre")]
@@ -31,21 +31,44 @@ namespace RamosGuillenTrujilloProyectoPorgreso1.Models
         [StringLength(10, MinimumLength = 10, ErrorMessage = "Su celular debe tener 10 números")]
         public string? Telefono { get; set; }
 
-        [Display(Name = "Correo electronico")]
-        [Required(ErrorMessage = "Ingrese su correo electrónico")]
-        [DataType(DataType.EmailAddress, ErrorMessage = "Ingrese un correo valido")]
-        public string? CorreoElectronico { get; set; }
-
         [Display(Name = "Fecha de nacimiento")]
         [Required(ErrorMessage = "Ingrese su fecha de nacimiento")]
         [DataType(DataType.DateTime, ErrorMessage = "Ingrese una fecha valida")]
         public DateTime FechaNacimiento { get; set; }
 
+        [Display(Name = "Correo electronico")]
+        [Required(ErrorMessage = "Ingrese su correo electrónico")]
+        [DataType(DataType.EmailAddress, ErrorMessage = "Ingrese un correo valido")]
+        public string? CorreoElectronico { get; set; }
 
+
+        [Display(Name = "Contraseña")]
         [Required(ErrorMessage = "Ingresa la contraseña")]
         [DataType(DataType.Password, ErrorMessage = "Ingrese una contraseña valida")]
         public string? Contraseña { get; set; }
 
-        */
+        [Display(Name = "Tipo (Conductor o Cliente)")]
+        [Required(ErrorMessage = "Ingresa el tipo")]
+        [RegularExpression("^[a-zA-Z]*${1,100}", ErrorMessage = "Solo puede ingresar letras")]
+        [VerificarTipo]
+        public string? Tipo { get; set; }
+    
+    }
+
+    public class VerificarTipo : ValidationAttribute
+    {
+        public override bool IsValid(object? value)
+        {
+            string valor1 = (string)value;
+            if (valor1 == "Conductor"||valor1=="Cliente")
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
     }
 }
+

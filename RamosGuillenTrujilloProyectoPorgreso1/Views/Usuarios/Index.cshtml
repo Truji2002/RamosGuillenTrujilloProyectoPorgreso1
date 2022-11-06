@@ -1,4 +1,4 @@
-﻿@model IEnumerable<RamosGuillenTrujilloProyectoPorgreso1.Models.Conductor>
+﻿@model IEnumerable<RamosGuillenTrujilloProyectoPorgreso1.Models.Usuario>
 
 @{
     ViewData["Title"] = "Index";
@@ -22,22 +22,19 @@
                 @Html.DisplayNameFor(model => model.Cedula)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.NumeroTelefono)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Correo)
+                @Html.DisplayNameFor(model => model.Telefono)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.FechaNacimiento)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.FechaEmisionLicencia)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.FechaVencimientoLicencia)
+                @Html.DisplayNameFor(model => model.CorreoElectronico)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Contraseña)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Tipo)
             </th>
             <th></th>
         </tr>
@@ -55,27 +52,24 @@
                 @Html.DisplayFor(modelItem => item.Cedula)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.NumeroTelefono)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Correo)
+                @Html.DisplayFor(modelItem => item.Telefono)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.FechaNacimiento)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.FechaEmisionLicencia)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.FechaVencimientoLicencia)
+                @Html.DisplayFor(modelItem => item.CorreoElectronico)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Contraseña)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.IdConductor">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.IdConductor">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.IdConductor">Delete</a>
+                @Html.DisplayFor(modelItem => item.Tipo)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.IdCliente">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.IdCliente">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.IdCliente">Delete</a>
             </td>
         </tr>
 }

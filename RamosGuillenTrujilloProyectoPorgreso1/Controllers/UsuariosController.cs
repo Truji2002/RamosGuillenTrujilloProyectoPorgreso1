@@ -10,85 +10,85 @@ using RamosGuillenTrujilloProyectoPorgreso1.Models;
 
 namespace RamosGuillenTrujilloProyectoPorgreso1.Controllers
 {
-    public class ConductorController : Controller
+    public class UsuariosController : Controller
     {
         private readonly RamosGuillenTrujilloProyectoPorgreso1Context _context;
 
-        public ConductorController(RamosGuillenTrujilloProyectoPorgreso1Context context)
+        public UsuariosController(RamosGuillenTrujilloProyectoPorgreso1Context context)
         {
             _context = context;
         }
 
-        // GET: Conductor
+        // GET: Usuarios
         public async Task<IActionResult> Index()
         {
-              return View(await _context.Conductor.ToListAsync());
+              return View(await _context.Usuario.ToListAsync());
         }
 
-        // GET: Conductor/Details/5
+        // GET: Usuarios/Details/5
         public async Task<IActionResult> Details(int? id)
         {
-            if (id == null || _context.Conductor == null)
+            if (id == null || _context.Usuario == null)
             {
                 return NotFound();
             }
 
-            var conductor = await _context.Conductor
-                .FirstOrDefaultAsync(m => m.IdConductor == id);
-            if (conductor == null)
+            var usuario = await _context.Usuario
+                .FirstOrDefaultAsync(m => m.IdCliente == id);
+            if (usuario == null)
             {
                 return NotFound();
             }
 
-            return View(conductor);
+            return View(usuario);
         }
 
-        // GET: Conductor/Create
+        // GET: Usuarios/Create
         public IActionResult Create()
         {
             return View();
         }
 
-        // POST: Conductor/Create
+        // POST: Usuarios/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("IdConductor,Nombre,Apellido,Cedula,NumeroTelefono,Correo,FechaNacimiento,FechaEmisionLicencia,FechaVencimientoLicencia,Contraseña")] Conductor conductor)
+        public async Task<IActionResult> Create([Bind("IdCliente,Nombre,Apellido,Cedula,Telefono,FechaNacimiento,CorreoElectronico,Contraseña,Tipo")] Usuario usuario)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(conductor);
+                _context.Add(usuario);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            return View(conductor);
+            return View(usuario);
         }
 
-        // GET: Conductor/Edit/5
+        // GET: Usuarios/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
-            if (id == null || _context.Conductor == null)
+            if (id == null || _context.Usuario == null)
             {
                 return NotFound();
             }
 
-            var conductor = await _context.Conductor.FindAsync(id);
-            if (conductor == null)
+            var usuario = await _context.Usuario.FindAsync(id);
+            if (usuario == null)
             {
                 return NotFound();
             }
-            return View(conductor);
+            return View(usuario);
         }
 
-        // POST: Conductor/Edit/5
+        // POST: Usuarios/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("IdConductor,Nombre,Apellido,Cedula,NumeroTelefono,Correo,FechaNacimiento,FechaEmisionLicencia,FechaVencimientoLicencia,Contraseña")] Conductor conductor)
+        public async Task<IActionResult> Edit(int id, [Bind("IdCliente,Nombre,Apellido,Cedula,Telefono,FechaNacimiento,CorreoElectronico,Contraseña,Tipo")] Usuario usuario)
         {
-            if (id != conductor.IdConductor)
+            if (id != usuario.IdCliente)
             {
                 return NotFound();
             }
@@ -97,12 +97,12 @@ namespace RamosGuillenTrujilloProyectoPorgreso1.Controllers
             {
                 try
                 {
-                    _context.Update(conductor);
+                    _context.Update(usuario);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!ConductorExists(conductor.IdConductor))
+                    if (!UsuarioExists(usuario.IdCliente))
                     {
                         return NotFound();
                     }
@@ -113,49 +113,49 @@ namespace RamosGuillenTrujilloProyectoPorgreso1.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            return View(conductor);
+            return View(usuario);
         }
 
-        // GET: Conductor/Delete/5
+        // GET: Usuarios/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
-            if (id == null || _context.Conductor == null)
+            if (id == null || _context.Usuario == null)
             {
                 return NotFound();
             }
 
-            var conductor = await _context.Conductor
-                .FirstOrDefaultAsync(m => m.IdConductor == id);
-            if (conductor == null)
+            var usuario = await _context.Usuario
+                .FirstOrDefaultAsync(m => m.IdCliente == id);
+            if (usuario == null)
             {
                 return NotFound();
             }
 
-            return View(conductor);
+            return View(usuario);
         }
 
-        // POST: Conductor/Delete/5
+        // POST: Usuarios/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            if (_context.Conductor == null)
+            if (_context.Usuario == null)
             {
-                return Problem("Entity set 'RamosGuillenTrujilloProyectoPorgreso1Context.Conductor'  is null.");
+                return Problem("Entity set 'RamosGuillenTrujilloProyectoPorgreso1Context.Usuario'  is null.");
             }
-            var conductor = await _context.Conductor.FindAsync(id);
-            if (conductor != null)
+            var usuario = await _context.Usuario.FindAsync(id);
+            if (usuario != null)
             {
-                _context.Conductor.Remove(conductor);
+                _context.Usuario.Remove(usuario);
             }
             
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
-        private bool ConductorExists(int id)
+        private bool UsuarioExists(int id)
         {
-          return _context.Conductor.Any(e => e.IdConductor == id);
+          return _context.Usuario.Any(e => e.IdCliente == id);
         }
     }
 }

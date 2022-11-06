@@ -6,6 +6,16 @@ namespace RamosGuillenTrujilloProyectoPorgreso1.Models
     {
         public int IdRuta { get; set; }
 
+        [Display(Name = "Fecha de emisión de la licencia")]
+        [Required(ErrorMessage = "Ingresa la fecha de emision de la licencia")]
+        [DataType(DataType.Date, ErrorMessage = "Ingrese una fecha valida")]
+        public DateTime FechaEmisionLicencia { get; set; }
+
+        [Display(Name = "Fecha de vencimiento de la licencia")]
+        [Required(ErrorMessage = "Ingresa la fecha de vencimiento de la licencia")]
+        [DataType(DataType.Date, ErrorMessage = "Ingrese una fecha valida")]
+        public DateTime FechaVencimientoLicencia { get; set; }
+
         [Display(Name = "Punto de partida")]
         [Required(ErrorMessage = "Debe ingresar el punto de partida")]
         [RegularExpression("^[a-zA-Z]*${1,100}", ErrorMessage = "Solo puede ingresar letras")]

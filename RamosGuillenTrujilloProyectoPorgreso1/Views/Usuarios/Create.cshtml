@@ -1,4 +1,4 @@
-﻿@model RamosGuillenTrujilloProyectoPorgreso1.Models.Conductor
+﻿@model RamosGuillenTrujilloProyectoPorgreso1.Models.Usuario
 
 @{
     ViewData["Title"] = "Create";
@@ -6,7 +6,7 @@
 
 <h1>Create</h1>
 
-<h4>Conductor</h4>
+<h4>Usuario</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
@@ -28,14 +28,9 @@
                 <span asp-validation-for="Cedula" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="NumeroTelefono" class="control-label"></label>
-                <input asp-for="NumeroTelefono" class="form-control" />
-                <span asp-validation-for="NumeroTelefono" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Correo" class="control-label"></label>
-                <input asp-for="Correo" class="form-control" />
-                <span asp-validation-for="Correo" class="text-danger"></span>
+                <label asp-for="Telefono" class="control-label"></label>
+                <input asp-for="Telefono" class="form-control" />
+                <span asp-validation-for="Telefono" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="FechaNacimiento" class="control-label"></label>
@@ -43,14 +38,9 @@
                 <span asp-validation-for="FechaNacimiento" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="FechaEmisionLicencia" class="control-label"></label>
-                <input asp-for="FechaEmisionLicencia" class="form-control" />
-                <span asp-validation-for="FechaEmisionLicencia" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="FechaVencimientoLicencia" class="control-label"></label>
-                <input asp-for="FechaVencimientoLicencia" class="form-control" />
-                <span asp-validation-for="FechaVencimientoLicencia" class="text-danger"></span>
+                <label asp-for="CorreoElectronico" class="control-label"></label>
+                <input asp-for="CorreoElectronico" class="form-control" />
+                <span asp-validation-for="CorreoElectronico" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Contraseña" class="control-label"></label>
@@ -58,15 +48,20 @@
                 <span asp-validation-for="Contraseña" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Registrar" class="btn btn-primary" asp-controller="Home" asp-action="Privacy" />
+                <label asp-for="Tipo" class="control-label"></label>
+                <input asp-for="Tipo" class="form-control" />
+                <span asp-validation-for="Tipo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
             </div>
         </form>
     </div>
 </div>
 
-@*<div>
-   <a asp-action="Index">Back to List</a>
-</div>*@
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
