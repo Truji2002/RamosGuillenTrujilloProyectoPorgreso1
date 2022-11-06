@@ -39,18 +39,6 @@
             <th>
                 @Html.DisplayNameFor(model => model.Contraseña)
             </th>
-            <th>
-                @Html.DisplayNameFor(model => model.IdRuta)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Ruta)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.IdTransporte)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Transporte)
-            </th>
             <th></th>
         </tr>
     </thead>
@@ -83,18 +71,6 @@
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Contraseña)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.IdRuta)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Ruta.PuntoLlegada)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.IdTransporte)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Transporte.Matricula)
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.IdConductor">Edit</a> |

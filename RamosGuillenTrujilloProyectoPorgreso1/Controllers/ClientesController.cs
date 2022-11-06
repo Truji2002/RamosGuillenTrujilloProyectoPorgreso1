@@ -22,8 +22,7 @@ namespace RamosGuillenTrujilloProyectoPorgreso1.Controllers
         // GET: Clientes
         public async Task<IActionResult> Index()
         {
-            var ramosGuillenTrujilloProyectoPorgreso1Context = _context.Cliente.Include(c => c.Reserva);
-            return View(await ramosGuillenTrujilloProyectoPorgreso1Context.ToListAsync());
+              return View(await _context.Cliente.ToListAsync());
         }
 
         // GET: Clientes/Details/5
@@ -35,7 +34,6 @@ namespace RamosGuillenTrujilloProyectoPorgreso1.Controllers
             }
 
             var cliente = await _context.Cliente
-                .Include(c => c.Reserva)
                 .FirstOrDefaultAsync(m => m.IdCliente == id);
             if (cliente == null)
             {
@@ -48,7 +46,6 @@ namespace RamosGuillenTrujilloProyectoPorgreso1.Controllers
         // GET: Clientes/Create
         public IActionResult Create()
         {
-            ViewData["IdCliente"] = new SelectList(_context.Set<Reserva>(), "IdReserva", "PuntoPartida");
             return View();
         }
 
@@ -57,7 +54,7 @@ namespace RamosGuillenTrujilloProyectoPorgreso1.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("IdCliente,Nombre,Apellido,Cedula,Telefono,CorreoElectronico,FechaNacimiento,Contraseña,idReserva")] Cliente cliente)
+        public async Task<IActionResult> Create([Bind("IdCliente,Nombre,Apellido,Cedula,Telefono,CorreoElectronico,FechaNacimiento,Contraseña")] Cliente cliente)
         {
             if (ModelState.IsValid)
             {
@@ -65,7 +62,6 @@ namespace RamosGuillenTrujilloProyectoPorgreso1.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["IdCliente"] = new SelectList(_context.Set<Reserva>(), "IdReserva", "PuntoPartida", cliente.IdCliente);
             return View(cliente);
         }
 
@@ -82,7 +78,6 @@ namespace RamosGuillenTrujilloProyectoPorgreso1.Controllers
             {
                 return NotFound();
             }
-            ViewData["IdCliente"] = new SelectList(_context.Set<Reserva>(), "IdReserva", "PuntoPartida", cliente.IdCliente);
             return View(cliente);
         }
 
@@ -91,7 +86,7 @@ namespace RamosGuillenTrujilloProyectoPorgreso1.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("IdCliente,Nombre,Apellido,Cedula,Telefono,CorreoElectronico,FechaNacimiento,Contraseña,idReserva")] Cliente cliente)
+        public async Task<IActionResult> Edit(int id, [Bind("IdCliente,Nombre,Apellido,Cedula,Telefono,CorreoElectronico,FechaNacimiento,Contraseña")] Cliente cliente)
         {
             if (id != cliente.IdCliente)
             {
@@ -118,7 +113,6 @@ namespace RamosGuillenTrujilloProyectoPorgreso1.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["IdCliente"] = new SelectList(_context.Set<Reserva>(), "IdReserva", "PuntoPartida", cliente.IdCliente);
             return View(cliente);
         }
 
@@ -131,7 +125,6 @@ namespace RamosGuillenTrujilloProyectoPorgreso1.Controllers
             }
 
             var cliente = await _context.Cliente
-                .Include(c => c.Reserva)
                 .FirstOrDefaultAsync(m => m.IdCliente == id);
             if (cliente == null)
             {

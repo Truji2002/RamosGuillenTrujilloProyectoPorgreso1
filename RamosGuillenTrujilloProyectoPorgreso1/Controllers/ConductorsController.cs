@@ -22,8 +22,7 @@ namespace RamosGuillenTrujilloProyectoPorgreso1.Controllers
         // GET: Conductors
         public async Task<IActionResult> Index()
         {
-            var ramosGuillenTrujilloProyectoPorgreso1Context = _context.Conductor.Include(c => c.Ruta).Include(c => c.Transporte);
-            return View(await ramosGuillenTrujilloProyectoPorgreso1Context.ToListAsync());
+              return View(await _context.Conductor.ToListAsync());
         }
 
         // GET: Conductors/Details/5
@@ -35,8 +34,6 @@ namespace RamosGuillenTrujilloProyectoPorgreso1.Controllers
             }
 
             var conductor = await _context.Conductor
-                .Include(c => c.Ruta)
-                .Include(c => c.Transporte)
                 .FirstOrDefaultAsync(m => m.IdConductor == id);
             if (conductor == null)
             {
@@ -49,8 +46,6 @@ namespace RamosGuillenTrujilloProyectoPorgreso1.Controllers
         // GET: Conductors/Create
         public IActionResult Create()
         {
-            ViewData["IdConductor"] = new SelectList(_context.Set<Ruta>(), "IdRuta", "PuntoLlegada");
-            ViewData["IdConductor"] = new SelectList(_context.Set<Transporte>(), "IdTransporte", "Matricula");
             return View();
         }
 
@@ -59,7 +54,7 @@ namespace RamosGuillenTrujilloProyectoPorgreso1.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("IdConductor,Nombre,Apellido,Cedula,NumeroTelefono,Correo,FechaNacimiento,FechaEmisionLicencia,FechaVencimientoLicencia,Contraseña,IdRuta,IdTransporte")] Conductor conductor)
+        public async Task<IActionResult> Create([Bind("IdConductor,Nombre,Apellido,Cedula,NumeroTelefono,Correo,FechaNacimiento,FechaEmisionLicencia,FechaVencimientoLicencia,Contraseña")] Conductor conductor)
         {
             if (ModelState.IsValid)
             {
@@ -67,8 +62,6 @@ namespace RamosGuillenTrujilloProyectoPorgreso1.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["IdConductor"] = new SelectList(_context.Set<Ruta>(), "IdRuta", "PuntoLlegada", conductor.IdConductor);
-            ViewData["IdConductor"] = new SelectList(_context.Set<Transporte>(), "IdTransporte", "Matricula", conductor.IdConductor);
             return View(conductor);
         }
 
@@ -85,8 +78,6 @@ namespace RamosGuillenTrujilloProyectoPorgreso1.Controllers
             {
                 return NotFound();
             }
-            ViewData["IdConductor"] = new SelectList(_context.Set<Ruta>(), "IdRuta", "PuntoLlegada", conductor.IdConductor);
-            ViewData["IdConductor"] = new SelectList(_context.Set<Transporte>(), "IdTransporte", "Matricula", conductor.IdConductor);
             return View(conductor);
         }
 
@@ -95,7 +86,7 @@ namespace RamosGuillenTrujilloProyectoPorgreso1.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("IdConductor,Nombre,Apellido,Cedula,NumeroTelefono,Correo,FechaNacimiento,FechaEmisionLicencia,FechaVencimientoLicencia,Contraseña,IdRuta,IdTransporte")] Conductor conductor)
+        public async Task<IActionResult> Edit(int id, [Bind("IdConductor,Nombre,Apellido,Cedula,NumeroTelefono,Correo,FechaNacimiento,FechaEmisionLicencia,FechaVencimientoLicencia,Contraseña")] Conductor conductor)
         {
             if (id != conductor.IdConductor)
             {
@@ -122,8 +113,6 @@ namespace RamosGuillenTrujilloProyectoPorgreso1.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["IdConductor"] = new SelectList(_context.Set<Ruta>(), "IdRuta", "PuntoLlegada", conductor.IdConductor);
-            ViewData["IdConductor"] = new SelectList(_context.Set<Transporte>(), "IdTransporte", "Matricula", conductor.IdConductor);
             return View(conductor);
         }
 
@@ -136,8 +125,6 @@ namespace RamosGuillenTrujilloProyectoPorgreso1.Controllers
             }
 
             var conductor = await _context.Conductor
-                .Include(c => c.Ruta)
-                .Include(c => c.Transporte)
                 .FirstOrDefaultAsync(m => m.IdConductor == id);
             if (conductor == null)
             {
