@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace RamosGuillenTrujilloProyectoPorgreso1.Models
 {
@@ -27,6 +28,11 @@ namespace RamosGuillenTrujilloProyectoPorgreso1.Models
 
         [Key]
         public int IdTransporte { get; set; }
+
+        [ForeignKey("IdConductor")]
+
+        public ICollection<Conductor> Conductor { get; set; }
+
         [Required(ErrorMessage = "Ingresa el tipo")]
         [Display(Name = "Tipo de transporte ")]
         [RegularExpression("^[a-zA-Z]*${1,100}", ErrorMessage = "Solo puede ingresar letras")]
