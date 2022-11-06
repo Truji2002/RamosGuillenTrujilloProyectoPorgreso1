@@ -33,10 +33,7 @@ namespace RamosGuillenTrujilloProyectoPorgreso1.Models
         public string? NumeroTelefono { get; set; }
 
 
-        [Display(Name = "Correo electronico")]
-        [Required(ErrorMessage = "Ingresa el correo")]
-        [DataType(DataType.EmailAddress, ErrorMessage = "Ingrese un correo valido.")]
-        public string? Correo { get; set; }
+
 
         [Display(Name = "Fecha de nacimiento")]
         [Required(ErrorMessage = "Ingresa la fecha de nacimiento")]
@@ -52,6 +49,11 @@ namespace RamosGuillenTrujilloProyectoPorgreso1.Models
         [Required(ErrorMessage = "Ingresa la fecha de vencimiento de la licencia")]
         [DataType(DataType.Date, ErrorMessage = "Ingrese una fecha valida")]
         public DateTime FechaVencimientoLicencia { get; set; }
+
+        [Display(Name = "Correo electronico")]
+        [Required(ErrorMessage = "Ingresa el correo")]
+        [DataType(DataType.EmailAddress, ErrorMessage = "Ingrese un correo valido.")]
+        public string? Correo { get; set; }
 
         [Display(Name = "Contraseña")]
         [Required(ErrorMessage = "Ingresa la contraseña")]
