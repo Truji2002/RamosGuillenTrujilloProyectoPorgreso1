@@ -18,10 +18,7 @@ namespace RamosGuillenTrujilloProyectoPorgreso1.Models
         [DataType(DataType.Date, ErrorMessage = "Ingrese una fecha valida")]
         public DateTime FechaVencimientoLicencia { get; set; }
 
-        [Display(Name = "Punto de partida")]
-        [Required(ErrorMessage = "Debe ingresar el punto de partida")]
-        [RegularExpression("^[a-zA-Z]*${1,100}", ErrorMessage = "Solo puede ingresar letras")]
-        public string? PuntoPartida { get; set; }
+       
 
         [Display(Name = "Punto de llegada")]
         [Required(ErrorMessage = "Debe ingresar el punto de llegada")]
@@ -34,11 +31,7 @@ namespace RamosGuillenTrujilloProyectoPorgreso1.Models
         [Range(50.0, 500, ErrorMessage = "Error. Ingrese un valor dentro los parámetros establecidos")]
         public double Precio { get; set; }
 
-        [Display(Name = "Fecha y hora de partida")]
-
-        [Required(ErrorMessage = "Ingresa la fecha de partida")]
-        [DataType(DataType.Date, ErrorMessage = "Ingrese una fecha valida")]
-        public DateTime FechaPartida { get; set; }
+        
 
         //public DateTime HoraAproximadaLlegada { get; set; }
 
@@ -60,6 +53,7 @@ namespace RamosGuillenTrujilloProyectoPorgreso1.Models
         [Required(ErrorMessage = "Ingresa la capacidad")]
         [Display(Name = "Capacidad de personas del transporte")]
         [Range(10, 50, ErrorMessage = "Error. Ingrese un valor dentro los parámetros establecidos")]
+        [RegularExpression("^[0.-9.]*$", ErrorMessage = "Solo puede ingresar numeros")]
         public int? Capacidad { get; set; }
     }
 }

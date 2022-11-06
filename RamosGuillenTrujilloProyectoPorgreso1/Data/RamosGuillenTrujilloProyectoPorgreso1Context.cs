@@ -21,5 +21,9 @@ namespace RamosGuillenTrujilloProyectoPorgreso1.Data
         
 
         public DbSet<RamosGuillenTrujilloProyectoPorgreso1.Models.Ruta> Ruta { get; set; }
+
+        
+
+        public DbSet<RamosGuillenTrujilloProyectoPorgreso1.Models.Reserva> Reserva { get; set; }
     }
 }

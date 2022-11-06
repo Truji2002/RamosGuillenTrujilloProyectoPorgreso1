@@ -10,85 +10,85 @@ using RamosGuillenTrujilloProyectoPorgreso1.Models;
 
 namespace RamosGuillenTrujilloProyectoPorgreso1.Controllers
 {
-    public class RutasController : Controller
+    public class ReservasController : Controller
     {
         private readonly RamosGuillenTrujilloProyectoPorgreso1Context _context;
 
-        public RutasController(RamosGuillenTrujilloProyectoPorgreso1Context context)
+        public ReservasController(RamosGuillenTrujilloProyectoPorgreso1Context context)
         {
             _context = context;
         }
 
-        // GET: Rutas
+        // GET: Reservas
         public async Task<IActionResult> Index()
         {
-              return View(await _context.Ruta.ToListAsync());
+              return View(await _context.Reserva.ToListAsync());
         }
 
-        // GET: Rutas/Details/5
+        // GET: Reservas/Details/5
         public async Task<IActionResult> Details(int? id)
         {
-            if (id == null || _context.Ruta == null)
+            if (id == null || _context.Reserva == null)
             {
                 return NotFound();
             }
 
-            var ruta = await _context.Ruta
-                .FirstOrDefaultAsync(m => m.IdRuta == id);
-            if (ruta == null)
+            var reserva = await _context.Reserva
+                .FirstOrDefaultAsync(m => m.IdReserva == id);
+            if (reserva == null)
             {
                 return NotFound();
             }
 
-            return View(ruta);
+            return View(reserva);
         }
 
-        // GET: Rutas/Create
+        // GET: Reservas/Create
         public IActionResult Create()
         {
             return View();
         }
 
-        // POST: Rutas/Create
+        // POST: Reservas/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("IdRuta,FechaEmisionLicencia,FechaVencimientoLicencia,PuntoLlegada,Precio,Tipo,Modelo,Matricula,Capacidad")] Ruta ruta)
+        public async Task<IActionResult> Create([Bind("IdReserva,FechaPartida,PuntoPartida,CantPersonas")] Reserva reserva)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(ruta);
+                _context.Add(reserva);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            return View(ruta);
+            return View(reserva);
         }
 
-        // GET: Rutas/Edit/5
+        // GET: Reservas/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
-            if (id == null || _context.Ruta == null)
+            if (id == null || _context.Reserva == null)
             {
                 return NotFound();
             }
 
-            var ruta = await _context.Ruta.FindAsync(id);
-            if (ruta == null)
+            var reserva = await _context.Reserva.FindAsync(id);
+            if (reserva == null)
             {
                 return NotFound();
             }
-            return View(ruta);
+            return View(reserva);
         }
 
-        // POST: Rutas/Edit/5
+        // POST: Reservas/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("IdRuta,FechaEmisionLicencia,FechaVencimientoLicencia,PuntoLlegada,Precio,Tipo,Modelo,Matricula,Capacidad")] Ruta ruta)
+        public async Task<IActionResult> Edit(int id, [Bind("IdReserva,FechaPartida,PuntoPartida,CantPersonas")] Reserva reserva)
         {
-            if (id != ruta.IdRuta)
+            if (id != reserva.IdReserva)
             {
                 return NotFound();
             }
@@ -97,12 +97,12 @@ namespace RamosGuillenTrujilloProyectoPorgreso1.Controllers
             {
                 try
                 {
-                    _context.Update(ruta);
+                    _context.Update(reserva);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!RutaExists(ruta.IdRuta))
+                    if (!ReservaExists(reserva.IdReserva))
                     {
                         return NotFound();
                     }
@@ -113,49 +113,49 @@ namespace RamosGuillenTrujilloProyectoPorgreso1.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            return View(ruta);
+            return View(reserva);
         }
 
-        // GET: Rutas/Delete/5
+        // GET: Reservas/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
-            if (id == null || _context.Ruta == null)
+            if (id == null || _context.Reserva == null)
             {
                 return NotFound();
             }
 
-            var ruta = await _context.Ruta
-                .FirstOrDefaultAsync(m => m.IdRuta == id);
-            if (ruta == null)
+            var reserva = await _context.Reserva
+                .FirstOrDefaultAsync(m => m.IdReserva == id);
+            if (reserva == null)
             {
                 return NotFound();
             }
 
-            return View(ruta);
+            return View(reserva);
         }
 
-        // POST: Rutas/Delete/5
+        // POST: Reservas/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            if (_context.Ruta == null)
+            if (_context.Reserva == null)
             {
-                return Problem("Entity set 'RamosGuillenTrujilloProyectoPorgreso1Context.Ruta'  is null.");
+                return Problem("Entity set 'RamosGuillenTrujilloProyectoPorgreso1Context.Reserva'  is null.");
             }
-            var ruta = await _context.Ruta.FindAsync(id);
-            if (ruta != null)
+            var reserva = await _context.Reserva.FindAsync(id);
+            if (reserva != null)
             {
-                _context.Ruta.Remove(ruta);
+                _context.Reserva.Remove(reserva);
             }
             
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
-        private bool RutaExists(int id)
+        private bool ReservaExists(int id)
         {
-          return _context.Ruta.Any(e => e.IdRuta == id);
+          return _context.Reserva.Any(e => e.IdReserva == id);
         }
     }
 }
