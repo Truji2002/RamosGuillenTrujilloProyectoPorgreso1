@@ -46,7 +46,7 @@ namespace RamosGuillenTrujilloProyectoPorgreso1.Models
         [DataType(DataType.Password, ErrorMessage = "Ingrese una contraseña valida")]
         public string? Contraseña { get; set; }
 
-
+        //public List<Reserva>Reserva { get; set; }
        /* public int idReserva { get; set; }
         public Reserva Reserva { get; set; }*/
 

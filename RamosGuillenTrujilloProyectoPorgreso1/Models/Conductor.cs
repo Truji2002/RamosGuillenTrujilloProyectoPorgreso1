@@ -66,6 +66,8 @@ namespace RamosGuillenTrujilloProyectoPorgreso1.Models
         public int IdTransporte { get; set; }   
         public Transporte Transporte { get; set; }  
         */
+        //public List<Ruta> Ruta { get; set; }
+       // public List<Transporte> Transporte { get; set; }
     }
         public class ValidarCedula : ValidationAttribute
         {

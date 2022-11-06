@@ -8,8 +8,9 @@ namespace RamosGuillenTrujilloProyectoPorgreso1.Models
         [Key]
         public int IdRuta { get; set; }
 
-        [ForeignKey("Conductor")]
-        
+        //[ForeignKey("IdConductor")]
+        //public Conductor Conductor { get; set; }
+
         //public ICollection<Conductor> Conductor { get; set; }
 
         [Display(Name = "Fecha de emisión de la licencia")]
@@ -34,5 +35,7 @@ namespace RamosGuillenTrujilloProyectoPorgreso1.Models
         [RegularExpression("^[0.0-9.9]*$", ErrorMessage = "Solo puede ingresar numeros")]
         [Range(50.0, 500, ErrorMessage = "Error. Ingrese un valor dentro los parámetros establecidos")]
         public double Precio { get; set; }
+
+       // public List<Reserva> Reservas { get; set; }
     }
 }

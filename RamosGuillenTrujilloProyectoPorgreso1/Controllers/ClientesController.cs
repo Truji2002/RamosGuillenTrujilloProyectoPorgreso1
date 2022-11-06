@@ -54,7 +54,7 @@ namespace RamosGuillenTrujilloProyectoPorgreso1.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("IdCliente,Nombre,Apellido,Cedula,Telefono,CorreoElectronico,FechaNacimiento,Contraseña")] Cliente cliente)
+        public async Task<IActionResult> Create([Bind("IdCliente,Nombre,Apellido,Cedula,Telefono,FechaNacimiento,CorreoElectronico,Contraseña")] Cliente cliente)
         {
             if (ModelState.IsValid)
             {
@@ -86,7 +86,7 @@ namespace RamosGuillenTrujilloProyectoPorgreso1.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("IdCliente,Nombre,Apellido,Cedula,Telefono,CorreoElectronico,FechaNacimiento,Contraseña")] Cliente cliente)
+        public async Task<IActionResult> Edit(int id, [Bind("IdCliente,Nombre,Apellido,Cedula,Telefono,FechaNacimiento,CorreoElectronico,Contraseña")] Cliente cliente)
         {
             if (id != cliente.IdCliente)
             {
