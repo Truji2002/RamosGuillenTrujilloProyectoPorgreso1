@@ -14,7 +14,8 @@ namespace RamosGuillenTrujilloProyectoPorgreso1.Models
 
 
 
-        //[ForeignKey] 
+        [ForeignKey("IdCliente")]
+        //public int IdCliente   { get; set; }
 
 
 
