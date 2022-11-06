@@ -1,0 +1,89 @@
+﻿@model IEnumerable<RamosGuillenTrujilloProyectoPorgreso1.Models.Ruta>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.FechaEmisionLicencia)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FechaVencimientoLicencia)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PuntoPartida)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PuntoLlegada)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Precio)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FechaPartida)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Tipo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Modelo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Matricula)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Capacidad)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.FechaEmisionLicencia)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FechaVencimientoLicencia)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PuntoPartida)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PuntoLlegada)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Precio)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FechaPartida)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Tipo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Modelo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Matricula)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Capacidad)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.IdRuta">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.IdRuta">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.IdRuta">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

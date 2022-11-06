@@ -17,5 +17,9 @@ namespace RamosGuillenTrujilloProyectoPorgreso1.Data
         
 
         public DbSet<RamosGuillenTrujilloProyectoPorgreso1.Models.Usuario> Usuario { get; set; }
+
+        
+
+        public DbSet<RamosGuillenTrujilloProyectoPorgreso1.Models.Ruta> Ruta { get; set; }
     }
 }
