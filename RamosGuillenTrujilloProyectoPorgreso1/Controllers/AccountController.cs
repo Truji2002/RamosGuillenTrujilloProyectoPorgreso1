@@ -1,7 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 
 using RamosGuillenTrujilloProyectoPorgreso1.Models;
-using RamosGuillenTrujilloProyectoPorgreso1.Repository;
 
 namespace RamosGuillenTrujilloProyectoPorgreso1.Controllers
 {
