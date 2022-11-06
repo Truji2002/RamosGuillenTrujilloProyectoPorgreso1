@@ -8,7 +8,7 @@ builder.Services.AddDbContext<RamosGuillenTrujilloProyectoPorgreso1Context>(opti
     options.UseSqlServer(builder.Configuration.GetConnectionString("RamosGuillenTrujilloProyectoPorgreso1Context") ?? throw new InvalidOperationException("Connection string 'RamosGuillenTrujilloProyectoPorgreso1Context' not found.")));
 
 builder.Services.AddDefaultIdentity<ApplicationUser>(options => options.SignIn.RequireConfirmedAccount = true)
-    .AddEntityFrameworkStores<ApplicationDbContext>();
+    .AddEntityFrameworkStores<RamosGuillenTrujilloProyectoPorgreso1Context>();
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
