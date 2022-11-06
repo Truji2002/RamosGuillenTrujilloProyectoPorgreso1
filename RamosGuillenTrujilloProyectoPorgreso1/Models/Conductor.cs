@@ -57,13 +57,13 @@ namespace RamosGuillenTrujilloProyectoPorgreso1.Models
         [Required(ErrorMessage = "Ingresa la contraseña")]
         [DataType(DataType.Password, ErrorMessage = "Ingrese una contraseña valida")]
         public string? Contraseña { get; set; }
-
+        /*
         public int IdRuta { get; set; }
         public Ruta Ruta { get; set; }
 
         public int IdTransporte { get; set; }   
         public Transporte Transporte { get; set; }  
-
+        */
     }
         public class ValidarCedula : ValidationAttribute
         {

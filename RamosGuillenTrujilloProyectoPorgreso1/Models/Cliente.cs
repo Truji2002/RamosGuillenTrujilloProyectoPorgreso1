@@ -46,8 +46,8 @@ namespace RamosGuillenTrujilloProyectoPorgreso1.Models
         public string? Contraseña { get; set; }
 
 
-        public int idReserva { get; set; }
-        public Reserva Reserva { get; set; }
+       /* public int idReserva { get; set; }
+        public Reserva Reserva { get; set; }*/
 
     }
     public class ValidarCedula1 : ValidationAttribute

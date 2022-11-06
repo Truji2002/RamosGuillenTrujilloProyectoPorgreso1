@@ -19,8 +19,8 @@ namespace RamosGuillenTrujilloProyectoPorgreso1.Models
 
 
 
-        [ForeignKey("IdCliente")]
-        public ICollection<Cliente> Cliente { get; set; }
+        [ForeignKey("Cliente")]
+        //public ICollection<Cliente> Cliente { get; set; }
 
 
         //public int IdCliente   { get; set; }

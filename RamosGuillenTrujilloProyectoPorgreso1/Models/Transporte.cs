@@ -29,9 +29,9 @@ namespace RamosGuillenTrujilloProyectoPorgreso1.Models
         [Key]
         public int IdTransporte { get; set; }
 
-        [ForeignKey("IdConductor")]
+        [ForeignKey("Conductor")]
 
-        public ICollection<Conductor> Conductor { get; set; }
+        //public ICollection<Conductor> Conductor { get; set; }
 
         [Required(ErrorMessage = "Ingresa el tipo")]
         [Display(Name = "Tipo de transporte ")]

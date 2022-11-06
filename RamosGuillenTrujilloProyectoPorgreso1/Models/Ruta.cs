@@ -8,9 +8,9 @@ namespace RamosGuillenTrujilloProyectoPorgreso1.Models
         [Key]
         public int IdRuta { get; set; }
 
-        [ForeignKey("IdConductor")]
+        [ForeignKey("Conductor")]
         
-        public ICollection<Conductor> Conductor { get; set; }
+        //public ICollection<Conductor> Conductor { get; set; }
 
         [Display(Name = "Fecha de emisión de la licencia")]
         [Required(ErrorMessage = "Ingresa la fecha de emision de la licencia")]
