@@ -12,8 +12,8 @@ using RamosGuillenTrujilloProyectoPorgreso1.Data;
 namespace RamosGuillenTrujilloProyectoPorgreso1.Migrations
 {
     [DbContext(typeof(RamosGuillenTrujilloProyectoPorgreso1Context))]
-    [Migration("20221106215110_Cambio7")]
-    partial class Cambio7
+    [Migration("20221106215915_Cambio1")]
+    partial class Cambio1
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

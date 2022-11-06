@@ -29,7 +29,7 @@ namespace RamosGuillenTrujilloProyectoPorgreso1.Models
         [Key]
         public int IdTransporte { get; set; }
 
-        [ForeignKey("Conductor")]
+        //[ForeignKey("Conductor")]
 
         //public ICollection<Conductor> Conductor { get; set; }
 

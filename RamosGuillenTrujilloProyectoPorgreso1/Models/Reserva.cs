@@ -19,7 +19,7 @@ namespace RamosGuillenTrujilloProyectoPorgreso1.Models
 
 
 
-        [ForeignKey("Cliente")]
+        //[ForeignKey("Cliente")]
         //public ICollection<Cliente> Cliente { get; set; }
 
 

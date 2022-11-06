@@ -8,7 +8,7 @@ namespace RamosGuillenTrujilloProyectoPorgreso1.Models
         [Key]
         public int IdRuta { get; set; }
 
-        [ForeignKey("Conductor")]
+        //[ForeignKey("Conductor")]
         
         //public ICollection<Conductor> Conductor { get; set; }
 
