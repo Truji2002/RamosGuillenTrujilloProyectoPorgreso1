@@ -4,6 +4,8 @@ namespace RamosGuillenTrujilloProyectoPorgreso1.Models
 {
     public class Ruta
     {
+
+        [Key]
         public int IdRuta { get; set; }
 
         [Display(Name = "Fecha de emisión de la licencia")]
