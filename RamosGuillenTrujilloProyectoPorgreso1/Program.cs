@@ -1,4 +1,16 @@
+using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
+using RamosGuillenTrujilloProyectoPorgreso1.Data;
+using RamosGuillenTrujilloProyectoPorgreso1.Areas.Identity.Data;
+
 var builder = WebApplication.CreateBuilder(args);
+var connectionString = builder.Configuration.GetConnectionString("RamosGuillenTrujilloProyectoPorgreso1ContextConnection") ?? throw new InvalidOperationException("Connection string 'RamosGuillenTrujilloProyectoPorgreso1ContextConnection' not found.");
+
+builder.Services.AddDbContext<RamosGuillenTrujilloProyectoPorgreso1Context>(options =>
+    options.UseSqlServer(connectionString));
+
+builder.Services.AddDefaultIdentity<ApplicationUser>(options => options.SignIn.RequireConfirmedAccount = true)
+    .AddEntityFrameworkStores<RamosGuillenTrujilloProyectoPorgreso1Context>();
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
@@ -17,11 +29,14 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
+app.UseAuthentication();;
 
 app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
+
+app.MapRazorPages();
 
 app.Run();
