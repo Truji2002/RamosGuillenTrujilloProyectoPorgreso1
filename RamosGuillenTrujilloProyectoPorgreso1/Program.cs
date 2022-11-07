@@ -6,7 +6,7 @@ using RamosGuillenTrujilloProyectoPorgreso1.Areas.Identity.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddDbContext<RamosGuillenTrujilloProyectoPorgreso1Context>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("RamosGuillenTrujilloProyectoPorgreso1Context") ?? throw new InvalidOperationException("Connection string 'RamosGuillenTrujilloProyectoPorgreso1Context' not found.")));
+    options.UseSqlServer(builder.Configuration.GetConnectionString("RamosGuillenTrujilloProyectoPorgreso1Context5") ?? throw new InvalidOperationException("Connection string 'RamosGuillenTrujilloProyectoPorgreso1Context' not found.")));
 
 builder.Services.AddDefaultIdentity<ApplicationUser5>(options => options.SignIn.RequireConfirmedAccount = true)
     .AddEntityFrameworkStores<RamosGuillenTrujilloProyectoPorgreso1Context5>();
