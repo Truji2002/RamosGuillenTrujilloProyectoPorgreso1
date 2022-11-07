@@ -12,9 +12,9 @@ namespace RamosGuillenTrujilloProyectoPorgreso1.Controllers
 {
     public class ClientesController : Controller
     {
-        private readonly RamosGuillenTrujilloProyectoPorgreso1Context _context;
+        private readonly RamosGuillenTrujilloProyectoPorgreso1Context10 _context;
 
-        public ClientesController(RamosGuillenTrujilloProyectoPorgreso1Context context)
+        public ClientesController(RamosGuillenTrujilloProyectoPorgreso1Context10 context)
         {
             _context = context;
         }
@@ -54,7 +54,7 @@ namespace RamosGuillenTrujilloProyectoPorgreso1.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("IdCliente,Nombre,Apellido,Cedula,Telefono,FechaNacimiento,CorreoElectronico,Contraseña")] Cliente cliente)
+        public async Task<IActionResult> Create([Bind("IdCliente,Nombre,Apellido,Cedula,Telefono")] Cliente cliente)
         {
             if (ModelState.IsValid)
             {
@@ -86,7 +86,7 @@ namespace RamosGuillenTrujilloProyectoPorgreso1.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("IdCliente,Nombre,Apellido,Cedula,Telefono,FechaNacimiento,CorreoElectronico,Contraseña")] Cliente cliente)
+        public async Task<IActionResult> Edit(int id, [Bind("IdCliente,Nombre,Apellido,Cedula,Telefono")] Cliente cliente)
         {
             if (id != cliente.IdCliente)
             {
@@ -141,7 +141,7 @@ namespace RamosGuillenTrujilloProyectoPorgreso1.Controllers
         {
             if (_context.Cliente == null)
             {
-                return Problem("Entity set 'RamosGuillenTrujilloProyectoPorgreso1Context.Cliente'  is null.");
+                return Problem("Entity set 'RamosGuillenTrujilloProyectoPorgreso1Context10.Cliente'  is null.");
             }
             var cliente = await _context.Cliente.FindAsync(id);
             if (cliente != null)

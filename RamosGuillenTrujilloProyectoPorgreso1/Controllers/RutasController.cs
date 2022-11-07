@@ -12,9 +12,9 @@ namespace RamosGuillenTrujilloProyectoPorgreso1.Controllers
 {
     public class RutasController : Controller
     {
-        private readonly RamosGuillenTrujilloProyectoPorgreso1Context _context;
+        private readonly RamosGuillenTrujilloProyectoPorgreso1Context10 _context;
 
-        public RutasController(RamosGuillenTrujilloProyectoPorgreso1Context context)
+        public RutasController(RamosGuillenTrujilloProyectoPorgreso1Context10 context)
         {
             _context = context;
         }
@@ -141,7 +141,7 @@ namespace RamosGuillenTrujilloProyectoPorgreso1.Controllers
         {
             if (_context.Ruta == null)
             {
-                return Problem("Entity set 'RamosGuillenTrujilloProyectoPorgreso1Context.Ruta'  is null.");
+                return Problem("Entity set 'RamosGuillenTrujilloProyectoPorgreso1Context10.Ruta'  is null.");
             }
             var ruta = await _context.Ruta.FindAsync(id);
             if (ruta != null)

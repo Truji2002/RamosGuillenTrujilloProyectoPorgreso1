@@ -30,23 +30,6 @@ namespace RamosGuillenTrujilloProyectoPorgreso1.Models
         [StringLength(10, MinimumLength = 10, ErrorMessage = "Su celular debe tener 10 números")]
         public string? Telefono { get; set; }
 
-
-
-        [Display(Name = "Fecha de nacimiento")]
-        [Required(ErrorMessage = "Ingrese su fecha de nacimiento")]
-        [DataType(DataType.DateTime, ErrorMessage = "Ingrese una fecha valida")]
-        public DateTime FechaNacimiento { get; set; }
-        [Display(Name = "Correo electronico")]
-        [Required(ErrorMessage = "Ingrese su correo electrónico")]
-        [DataType(DataType.EmailAddress, ErrorMessage = "Ingrese un correo valido")]
-        public string? CorreoElectronico { get; set; }
-
-
-        [Required(ErrorMessage = "Ingresa la contraseña")]
-        [DataType(DataType.Password, ErrorMessage = "Ingrese una contraseña valida")]
-        public string? Contraseña { get; set; }
-
-
     }
     public class ValidarCedula1 : ValidationAttribute
     {

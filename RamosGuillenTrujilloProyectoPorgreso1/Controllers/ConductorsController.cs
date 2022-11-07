@@ -12,9 +12,9 @@ namespace RamosGuillenTrujilloProyectoPorgreso1.Controllers
 {
     public class ConductorsController : Controller
     {
-        private readonly RamosGuillenTrujilloProyectoPorgreso1Context _context;
+        private readonly RamosGuillenTrujilloProyectoPorgreso1Context10 _context;
 
-        public ConductorsController(RamosGuillenTrujilloProyectoPorgreso1Context context)
+        public ConductorsController(RamosGuillenTrujilloProyectoPorgreso1Context10 context)
         {
             _context = context;
         }
@@ -54,7 +54,7 @@ namespace RamosGuillenTrujilloProyectoPorgreso1.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("IdConductor,Nombre,Apellido,Cedula,NumeroTelefono,FechaNacimiento,FechaEmisionLicencia,FechaVencimientoLicencia,Correo,Contraseña")] Conductor conductor)
+        public async Task<IActionResult> Create([Bind("IdConductor,Cedula,NumeroTelefono,FechaNacimiento,FechaEmisionLicencia,FechaVencimientoLicencia")] Conductor conductor)
         {
             if (ModelState.IsValid)
             {
@@ -86,7 +86,7 @@ namespace RamosGuillenTrujilloProyectoPorgreso1.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("IdConductor,Nombre,Apellido,Cedula,NumeroTelefono,FechaNacimiento,FechaEmisionLicencia,FechaVencimientoLicencia,Correo,Contraseña")] Conductor conductor)
+        public async Task<IActionResult> Edit(int id, [Bind("IdConductor,Cedula,NumeroTelefono,FechaNacimiento,FechaEmisionLicencia,FechaVencimientoLicencia")] Conductor conductor)
         {
             if (id != conductor.IdConductor)
             {
@@ -141,7 +141,7 @@ namespace RamosGuillenTrujilloProyectoPorgreso1.Controllers
         {
             if (_context.Conductor == null)
             {
-                return Problem("Entity set 'RamosGuillenTrujilloProyectoPorgreso1Context.Conductor'  is null.");
+                return Problem("Entity set 'RamosGuillenTrujilloProyectoPorgreso1Context10.Conductor'  is null.");
             }
             var conductor = await _context.Conductor.FindAsync(id);
             if (conductor != null)

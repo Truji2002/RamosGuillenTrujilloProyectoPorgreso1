@@ -8,7 +8,7 @@ namespace RamosGuillenTrujilloProyectoPorgreso1.Models
         [Key]
         public int IdConductor { get; set; }
 
-        [Display(Name = "Nombre")]
+        /*[Display(Name = "Nombre")]
         [Required(ErrorMessage = "Ingrese su nombre")]
         [RegularExpression("^[a-zA-Z]*${1,100}", ErrorMessage = "Solo puede ingresar letras")]
 
@@ -17,7 +17,7 @@ namespace RamosGuillenTrujilloProyectoPorgreso1.Models
         [Display(Name = "Apellido")]
         [Required(ErrorMessage = "Ingrese su apellido")]
         [RegularExpression("^[a-zA-Z]*${1,100}", ErrorMessage = "Solo puede ingresar letras")]
-        public string? Apellido { get; set; }
+        public string? Apellido { get; set; }*/
 
         [Display(Name = "Cedula")]
         [Required(ErrorMessage = "Ingrese su cedula")]
@@ -50,7 +50,7 @@ namespace RamosGuillenTrujilloProyectoPorgreso1.Models
         [DataType(DataType.Date, ErrorMessage = "Ingrese una fecha valida")]
         public DateTime FechaVencimientoLicencia { get; set; }
 
-        [Display(Name = "Correo electronico")]
+        /*[Display(Name = "Correo electronico")]
         [Required(ErrorMessage = "Ingresa el correo")]
         [DataType(DataType.EmailAddress, ErrorMessage = "Ingrese un correo valido.")]
         public string? Correo { get; set; }
@@ -58,7 +58,7 @@ namespace RamosGuillenTrujilloProyectoPorgreso1.Models
         [Display(Name = "Contraseña")]
         [Required(ErrorMessage = "Ingresa la contraseña")]
         [DataType(DataType.Password, ErrorMessage = "Ingrese una contraseña valida")]
-        public string? Contraseña { get; set; }
+        public string? Contraseña { get; set; }*/
 
     }
         public class ValidarCedula : ValidationAttribute
