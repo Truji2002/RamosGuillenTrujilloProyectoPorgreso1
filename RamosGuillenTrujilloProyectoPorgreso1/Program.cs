@@ -3,6 +3,7 @@ using Microsoft.Extensions.DependencyInjection;
 using RamosGuillenTrujilloProyectoPorgreso1.Data;
 using Microsoft.AspNetCore.Identity;
 using RamosGuillenTrujilloProyectoPorgreso1.Areas.Identity.Data;
+using Microsoft.AspNetCore.Authentication.Cookies;
 //using RamosGuillenTrujilloProyectoPorgreso1.Areas.Identity.Data;
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddDbContext<RamosGuillenTrujilloProyectoPorgreso1Context10>(options =>
@@ -14,9 +15,18 @@ builder.Services.AddDefaultIdentity<ApplicationUser>(options => options.SignIn.R
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
+builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+    .AddCookie(option =>
+    {
+        option.LoginPath = "/Acceso/Index";
+        option.ExpireTimeSpan = TimeSpan.FromMinutes(20);
+        option.AccessDeniedPath = "/Home/Privacy";
+
+    }
+    );
 
 
-    var app = builder.Build();
+var app = builder.Build();
 
 
 // Configure the HTTP request pipeline.
