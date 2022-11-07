@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using RamosGuillenTrujilloProyectoPorgreso1.Data;
 
@@ -11,9 +12,10 @@ using RamosGuillenTrujilloProyectoPorgreso1.Data;
 namespace RamosGuillenTrujilloProyectoPorgreso1.Migrations
 {
     [DbContext(typeof(RamosGuillenTrujilloProyectoPorgreso1Context10))]
-    partial class RamosGuillenTrujilloProyectoPorgreso1Context10ModelSnapshot : ModelSnapshot
+    [Migration("20221107024355_MyMigration3")]
+    partial class MyMigration3
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
