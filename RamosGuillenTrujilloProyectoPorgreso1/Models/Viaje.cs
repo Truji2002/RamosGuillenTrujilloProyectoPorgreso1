@@ -13,6 +13,7 @@ namespace RamosGuillenTrujilloProyectoPorgreso1.Models
         [RegularExpression("^[a-zA-Z]*${1,100}", ErrorMessage = "Solo puede ingresar letras")]
         public string? Nombre { get; set; }
 
+        [Display(Name = "Imagen")]
         public string ImagenUrl { get; set; }
 
         [NotMapped]

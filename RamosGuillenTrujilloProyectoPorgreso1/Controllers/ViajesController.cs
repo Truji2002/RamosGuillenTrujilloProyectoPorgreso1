@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using RamosGuillenTrujilloProyectoPorgreso1.Models;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
-using Microsoft.EntityFrameworkCore;
 using RamosGuillenTrujilloProyectoPorgreso1.Data;
-using RamosGuillenTrujilloProyectoPorgreso1.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace RamosGuillenTrujilloProyectoPorgreso1.Controllers
 {
