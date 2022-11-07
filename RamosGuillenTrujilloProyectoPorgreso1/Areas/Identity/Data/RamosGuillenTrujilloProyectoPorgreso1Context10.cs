@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using RamosGuillenTrujilloProyectoPorgreso1.Areas.Identity.Data;
+using RamosGuillenTrujilloProyectoPorgreso1.Models;
 
 namespace RamosGuillenTrujilloProyectoPorgreso1.Data;
 
@@ -24,6 +25,8 @@ public class RamosGuillenTrujilloProyectoPorgreso1Context10 : IdentityDbContext<
 
         builder.ApplyConfiguration(new ApplicationUserEntityConfiguration());
     }
+
+    public DbSet<RamosGuillenTrujilloProyectoPorgreso1.Models.Conductor> Conductor { get; set; }
 
 }
 public class ApplicationUserEntityConfiguration : IEntityTypeConfiguration<ApplicationUser>
