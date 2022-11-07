@@ -23,7 +23,6 @@ namespace RamosGuillenTrujilloProyectoPorgreso1.Models
 
         [Required(ErrorMessage = "Ingresa la mátricula")]
         [Display(Name = "Mátricula del transporte ")]
-        [RegularExpression("^[a-zA-Z]*${1,100}", ErrorMessage = "Solo puede ingresar letras")]
         public string? Matricula { get; set; }
 
         [Required(ErrorMessage = "Ingresa la capacidad")]
