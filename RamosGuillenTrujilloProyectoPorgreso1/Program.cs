@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Identity;
 using RamosGuillenTrujilloProyectoPorgreso1.Areas.Identity.Data;
 
 var builder = WebApplication.CreateBuilder(args);
+
 builder.Services.AddDbContext<RamosGuillenTrujilloProyectoPorgreso1Context>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("RamosGuillenTrujilloProyectoPorgreso1Context5") ?? throw new InvalidOperationException("Connection string 'RamosGuillenTrujilloProyectoPorgreso1Context' not found.")));
 
