@@ -4,8 +4,10 @@ using RamosGuillenTrujilloProyectoPorgreso1.Data;
 using RamosGuillenTrujilloProyectoPorgreso1.Areas.Identity.Data;
 
 var builder = WebApplication.CreateBuilder(args);
-builder.Services.AddDbContext<RamosGuillenTrujilloProyectoPorgreso1Context>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("RamosGuillenTrujilloProyectoPorgreso1Context") ?? throw new InvalidOperationException("Connection string 'RamosGuillenTrujilloProyectoPorgreso1Context' not found.")));
+var connectionString = builder.Configuration.GetConnectionString("RamosGuillenTrujilloProyectoPorgreso1ContextConnection4") ?? throw new InvalidOperationException("Connection string 'RamosGuillenTrujilloProyectoPorgreso1ContextConnection4' not found.");
+
+builder.Services.AddDbContext<RamosGuillenTrujilloProyectoPorgreso1Context4>(options =>
+    options.UseSqlServer(connectionString));
 
 builder.Services.AddDefaultIdentity<ApplicationUser>(options => options.SignIn.RequireConfirmedAccount = true)
     .AddEntityFrameworkStores<RamosGuillenTrujilloProyectoPorgreso1Context4>();
@@ -27,7 +29,7 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
-app.UseAuthentication();;
+app.UseAuthentication(); ;
 
 app.UseAuthorization();
 
@@ -35,4 +37,7 @@ app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
 
+app.MapRazorPages();
+
 app.Run();
+
