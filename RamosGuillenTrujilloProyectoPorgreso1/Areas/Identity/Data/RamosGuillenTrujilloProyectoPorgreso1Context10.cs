@@ -34,6 +34,8 @@ public class RamosGuillenTrujilloProyectoPorgreso1Context10 : IdentityDbContext<
 
     public DbSet<RamosGuillenTrujilloProyectoPorgreso1.Models.Cliente> Cliente { get; set; }
 
+    public DbSet<RamosGuillenTrujilloProyectoPorgreso1.Models.Promocion> Promocion { get; set; }
+
 }
 public class ApplicationUserEntityConfiguration : IEntityTypeConfiguration<ApplicationUser>
 {
