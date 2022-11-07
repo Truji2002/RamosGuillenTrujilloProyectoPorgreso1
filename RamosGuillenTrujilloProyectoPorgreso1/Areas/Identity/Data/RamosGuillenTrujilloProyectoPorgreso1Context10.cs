@@ -28,6 +28,10 @@ public class RamosGuillenTrujilloProyectoPorgreso1Context10 : IdentityDbContext<
 
     public DbSet<RamosGuillenTrujilloProyectoPorgreso1.Models.Conductor> Conductor { get; set; }
 
+    public DbSet<RamosGuillenTrujilloProyectoPorgreso1.Models.Transporte> Transporte { get; set; }
+
+    public DbSet<RamosGuillenTrujilloProyectoPorgreso1.Models.Ruta> Ruta { get; set; }
+
 }
 public class ApplicationUserEntityConfiguration : IEntityTypeConfiguration<ApplicationUser>
 {
