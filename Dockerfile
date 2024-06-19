@@ -2,12 +2,12 @@
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build-env
 WORKDIR /app
 
-# Copia los archivos de proyecto y restaura las dependencias
-COPY *.csproj ./
+# Copia el archivo de proyecto y restaura las dependencias
+COPY RamosGuillenTrujilloProyectoPorgreso1/*.csproj ./
 RUN dotnet restore
 
 # Copia el resto de los archivos y construye el proyecto
-COPY . ./
+COPY RamosGuillenTrujilloProyectoPorgreso1/. ./
 RUN dotnet publish -c Release -o out
 
 # Usa una imagen base de .NET Runtime para correr la aplicación
@@ -20,4 +20,5 @@ EXPOSE 80
 
 # Ejecutar la aplicación
 ENTRYPOINT ["dotnet", "RamosGuillenTrujilloProyectoPorgreso1.dll"]
+
 
